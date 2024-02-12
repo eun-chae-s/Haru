@@ -88,3 +88,17 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: AbhayaLibre
+      fonts:
+        - asset: 'assets/fonts/AbhayaLibre/AbhayaLibre-Bold.ttf'
+          weight: 700
+        - asset: 'assets/fonts/AbhayaLibre/AbhayaLibre-ExtraBold.ttf'
+          weight: 800
+        - asset: 'assets/fonts/AbhayaLibre/AbhayaLibre-Medium.ttf'
+          weight: 500
+        - asset: 'assets/fonts/AbhayaLibre/AbhayaLibre-Regular.ttf'
+          weight: 400
+        - asset: 'assets/fonts/AbhayaLibre/AbhayaLibre-SemiBold.ttf'
+          weight: 600
+

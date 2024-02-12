@@ -23,12 +23,20 @@ class HomePage extends StatelessWidget {
                   appTitle,
                   textDirection: TextDirection.ltr,
                   textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 50,
+                    fontWeight: FontWeight.w700,
+                    fontFamily: 'AbhayaLibre',
+                  ),
                 ),
                 Text(
                   subTitle,
                   textAlign: TextAlign.left,
                   textDirection: TextDirection.ltr,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'AbhayaLibre',
+                  ),
                 ),
                 SizedBox(
                   height: 450,
@@ -37,6 +45,10 @@ class HomePage extends StatelessWidget {
                   patent,
                   textDirection: TextDirection.ltr,
                   textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'AbhayaLibre',
+                  ),
                 )
               ],
             )));
