@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:haru/app/core/constant/constants.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    const String appTitle = 'HARU:';
-    const String subTitle = '하루하루 의미있는 배움의 시간';
-    const String patent = '@rachae';
-    const Color backgroundColor = Color(0xFF7B91BC);
     return Container(
         color: backgroundColor,
         width: double.maxFinite,

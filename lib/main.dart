@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'app/modules/home/view/home_view.dart';
+// import 'app/modules/home/view/home_view.dart';
+import 'app/modules/login/view/login_view.dart';
 
 void main() {
-  runApp(const HomePage());
+  // runApp(const HomePage());
+  runApp(const LoginPage());
 }
 
 // class MyApp extends StatelessWidget {
