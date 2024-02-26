@@ -1,10 +1,14 @@
-import 'package:flutter/material.dart';
-// import 'app/modules/home/view/home_view.dart';
+import 'package:flutter/cupertino.dart';
+import 'app/modules/home/view/home_view.dart';
 import 'app/modules/login/view/login_view.dart';
 
 void main() {
-  // runApp(const HomePage());
-  runApp(const LoginPage());
+  runApp(
+    const CupertinoApp(
+      home: LoginPage()
+    )
+  );
+  // runApp(const LoginPage());
 }
 
 // class MyApp extends StatelessWidget {

@@ -1,23 +1,27 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:haru/app/core/constant/constants.dart';
 
 // Login page => stateless
 // Error message, disabled login button => stateful
+// https://mobikul.com/make-login-page-design-with-flutter/
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
+  static void logSignIn() {}
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
-            color: backgroundColor,
+    return const CupertinoPageScaffold(
+        backgroundColor: backgroundColor,
+        child: SizedBox(
             width: double.maxFinite,
             height: double.maxFinite,
-            child: const Padding(
-              padding: EdgeInsets.all(30.0),
+            child: Padding(
+              padding: EdgeInsets.all(50.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(loginTitle,
                       textDirection: TextDirection.ltr,
@@ -25,11 +29,83 @@ class LoginPage extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 50,
                           fontWeight: FontWeight.w700,
+                          color: Colors.white,
                           fontFamily: 'AbhayaLibre')),
-                  IDTextBox(),
+                  SizedBox(
+                    height: 100,
+                  ),
+                  LoginSection(),
+                  SizedBox(
+                    height: 100,
+                  ),
+                  Text(
+                    question,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'AbhayaLibre',
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  CupertinoButton(
+                      onPressed: logSignIn,
+                      color: buttonColor,
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        signIn,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w800,
+                          fontFamily: 'AbhayaLibre',
+                        ),
+                      )),
                 ],
               ),
             )));
+  }
+}
+
+class LoginSection extends StatelessWidget {
+  const LoginSection({super.key});
+
+  static void logEnter() {}
+
+  @override
+  Widget build(BuildContext context) {
+    return const IntrinsicHeight(
+        child: Row(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Column(
+          children: [
+            IDTextBox(),
+            SizedBox(
+              height: 7,
+            ),
+            PasswordTextBox()
+          ],
+        ),
+        SizedBox(
+          width: 7,
+        ),
+        CupertinoButton(
+            onPressed: logEnter,
+            color: buttonColor,
+            padding: EdgeInsets.all(20),
+            child: Text(
+              enter,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontFamily: 'AbhayaLibre',
+              ),
+            )),
+      ],
+    ));
   }
 }
 
@@ -39,11 +115,34 @@ class IDTextBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SizedBox(
-        width: 250,
-        child: TextField(
-            textDirection: TextDirection.ltr,
-            obscureText: true,
-            decoration: InputDecoration(
-                border: OutlineInputBorder(), labelText: userID)));
+        width: 230,
+        child: CupertinoTextField(
+          textDirection: TextDirection.ltr,
+          placeholder: "Enter your ID",
+          padding: EdgeInsets.all(10),
+          style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontFamily: 'AbhayaLibre',
+          ),
+        ));
+  }
+}
+
+class PasswordTextBox extends StatelessWidget {
+  const PasswordTextBox({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox(
+        width: 230,
+        child: CupertinoTextField(
+          textDirection: TextDirection.ltr,
+          placeholder: "Enter your password",
+          padding: EdgeInsets.all(10),
+          style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontFamily: 'AbhayaLibre',
+          ),
+        ));
   }
 }
