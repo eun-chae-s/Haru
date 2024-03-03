@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'app/modules/home/view/home_view.dart';
-import 'app/modules/login/view/login_view.dart';
 
 void main() {
   runApp(
     const CupertinoApp(
-      home: LoginPage()
+      home: HomePage()
     )
   );
   // runApp(const LoginPage());
