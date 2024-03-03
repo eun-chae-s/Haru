@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:haru/app/core/constant/constants.dart';
+import 'package:haru/app/modules/home/view/home_view.dart';
 
 // Login page => stateless
 // Error message, disabled login button => stateful
@@ -71,16 +72,14 @@ class LoginPage extends StatelessWidget {
 class LoginSection extends StatelessWidget {
   const LoginSection({super.key});
 
-  static void logEnter() {}
-
   @override
   Widget build(BuildContext context) {
-    return const IntrinsicHeight(
+    return IntrinsicHeight(
         child: Row(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Column(
+        const Column(
           children: [
             IDTextBox(),
             SizedBox(
@@ -89,14 +88,19 @@ class LoginSection extends StatelessWidget {
             PasswordTextBox()
           ],
         ),
-        SizedBox(
+        const SizedBox(
           width: 7,
         ),
         CupertinoButton(
-            onPressed: logEnter,
+            onPressed: () {
+              Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (context) => const HomePage()),
+              );
+            },
             color: buttonColor,
-            padding: EdgeInsets.all(20),
-            child: Text(
+            padding: const EdgeInsets.all(20),
+            child: const Text(
               enter,
               textAlign: TextAlign.center,
               style: TextStyle(

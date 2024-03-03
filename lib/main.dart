@@ -1,12 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'app/modules/home/view/home_view.dart';
+import 'app/modules/landing/view/landing_view.dart';
 
 void main() {
-  runApp(
-    const CupertinoApp(
-      home: HomePage()
-    )
-  );
+  runApp(const CupertinoApp(home: LandingPage()));
   // runApp(const LoginPage());
 }
 

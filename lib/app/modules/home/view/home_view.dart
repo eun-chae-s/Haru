@@ -1,8 +1,7 @@
+// can you make a Home Page with a header with saying "good morning", "good evening" based on current time?
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:haru/app/core/constant/constants.dart';
-import 'package:haru/app/modules/login/view/login_view.dart';
-import 'dart:async';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,61 +12,53 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-  void initState() {
-    Timer(const Duration(seconds: 5), () {
-      Navigator.push(
-        context,
-        CupertinoPageRoute(builder: (context) => const LoginPage()),
-      );
-    });
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-        child: Container(
-            color: backgroundColor,
-            width: double.maxFinite,
-            height: double.maxFinite,
-            child: const Padding(
-                padding: EdgeInsets.all(30.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    Text(
-                      appTitle,
-                      textDirection: TextDirection.ltr,
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                          fontSize: 50,
-                          fontWeight: FontWeight.w700,
-                          fontFamily: 'AbhayaLibre',
-                          color: Colors.white),
-                    ),
-                    Text(
-                      subTitle,
-                      textAlign: TextAlign.left,
-                      textDirection: TextDirection.ltr,
-                      style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontFamily: 'AbhayaLibre',
-                          color: Colors.white),
-                    ),
-                    SizedBox(
-                      height: 450,
-                    ),
-                    Text(
-                      patent,
-                      textDirection: TextDirection.ltr,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontFamily: 'AbhayaLibre',
-                          color: Colors.white),
-                    )
-                  ],
-                ))));
+      // a header with saying greeting based on the current time?
+
+      // a bottom navigation bar with 3 items: home, calendar, and settings
+      child: CupertinoTabScaffold(
+        tabBar: CupertinoTabBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.calendar),
+              label: 'Calendar',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.settings),
+              label: 'Settings',
+            ),
+          ],
+        ),
+        tabBuilder: (BuildContext context, int index) {
+          return CupertinoTabView(
+            builder: (BuildContext context) {
+              switch (index) {
+                case 0:
+                  return const Center(
+                    child: Text('Home'),
+                  );
+                case 1:
+                  return const Center(
+                    child: Text('Calendar'),
+                  );
+                case 2:
+                  return const Center(
+                    child: Text('Settings'),
+                  );
+                default:
+                  return const Center(
+                    child: Text('Home'),
+                  );
+              }
+            },
+          );
+        },
+      ),
+    );
   }
 }
