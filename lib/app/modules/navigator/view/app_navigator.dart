@@ -1,6 +1,8 @@
 // REFERENCE: https://blog.logrocket.com/how-to-build-a-bottom-navigation-bar-in-flutter/
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:haru/app/modules/home/view/home_view.dart';
+import 'package:haru/app/core/constant/constants.dart';
 
 class AppNavigator extends StatefulWidget {
   const AppNavigator({super.key});
@@ -24,26 +26,45 @@ class _AppNavigatorState extends State<AppNavigator> {
 
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
-        items: const [
+        backgroundColor: backgroundColor,
+        activeColor: Colors.white,
+        inactiveColor: Colors.black,
+        height: 50.0,
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.home),
-            label: 'Home',
+            icon: Container(
+              padding: const EdgeInsets.symmetric(vertical: 25),
+              child: const Icon(CupertinoIcons.home),
+            ),
+            tooltip: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.search),
-            label: 'Search',
+            icon: Container(
+              padding: const EdgeInsets.symmetric(vertical: 25),
+              child: const Icon(CupertinoIcons.pencil_outline),
+            ),
+            tooltip: 'Progress',
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.bookmark),
-            label: 'Bookmarks',
+            icon: Container(
+              padding: const EdgeInsets.symmetric(vertical: 25),
+              child: const Icon(CupertinoIcons.timer),
+            ),
+            tooltip: 'Create',
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.person),
-            label: 'Profile',
+            icon: Container(
+              padding: const EdgeInsets.symmetric(vertical: 25),
+              child: const Icon(CupertinoIcons.bookmark),
+            ),
+            tooltip: 'Timer',
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.settings),
-            label: 'Settings',
+            icon: Container(
+              padding: const EdgeInsets.symmetric(vertical: 25),
+              child: const Icon(CupertinoIcons.settings),
+            ),
+            tooltip: 'Settings',
           ),
         ],
         currentIndex: _currentIndex,
