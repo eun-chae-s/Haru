@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:haru/app/core/constant/constants.dart';
-import 'package:haru/app/modules/home/view/home_view.dart';
+import 'package:haru/app/modules/navigator/view/app_navigator.dart';
 
 // Login page => stateless
 // Error message, disabled login button => stateful
@@ -95,7 +95,7 @@ class LoginSection extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                CupertinoPageRoute(builder: (context) => const HomePage()),
+                CupertinoPageRoute(builder: (context) => const AppNavigator()),
               );
             },
             color: buttonColor,
