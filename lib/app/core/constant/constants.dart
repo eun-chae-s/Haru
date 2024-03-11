@@ -15,3 +15,4 @@ const String signIn = 'Sign In';
 const Color backgroundColor = Color(0xFF7B91BC);
 const Color buttonColor = Color(0xFF132C5D);
 const Color lightBackgroundColor = Color(0xFFF2F9FF);
+const Color doneColor = Color(0xFF7B91BC);

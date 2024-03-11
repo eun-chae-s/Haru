@@ -2,6 +2,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:haru/app/core/constant/constants.dart';
 import 'package:intl/intl.dart';
+import 'package:haru/app/global/widgets/subject_box.dart';
+import 'package:haru/app/data/subject.dart';
+import 'package:haru/app/data/task.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,17 +14,51 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Subject> subjects = [
+    Subject(
+      name: 'Math',
+      tasks: [
+        Task(name: 'Algebra', isCompleted: true),
+        Task(name: 'Geometry'),
+        Task(name: 'Calculus'),
+      ],
+    ),
+    Subject(
+      name: 'Science',
+      tasks: [
+        Task(name: 'Physics'),
+        Task(name: 'Chemistry'),
+        Task(name: 'Biology', isCompleted: true),
+      ],
+    ),
+    Subject(
+      name: 'History',
+      tasks: [
+        Task(name: 'World History'),
+        Task(name: 'American History'),
+        Task(name: 'European History'),
+      ],
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return const CupertinoPageScaffold(
+    return CupertinoPageScaffold(
       backgroundColor: lightBackgroundColor,
-      child: SizedBox(
-          width: double.infinity,
+      child: SingleChildScrollView(
           child: Column(
-            children: <Widget>[
-              Header(),
-            ],
-          )),
+        children: <Widget>[
+          const Header(),
+          ListView.builder(
+            padding: const EdgeInsets.all(16.0),
+            itemCount: subjects.length,
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              return SubjectBox(subject: subjects[index]);
+            },
+          )
+        ],
+      )),
     );
   }
 }
@@ -51,7 +88,9 @@ class Header extends StatelessWidget {
     return Container(
       height: 300,
       width: double.infinity,
-      padding: const EdgeInsets.only(top: 50.0, left: 30.0, right: 30.0),
+      padding: const EdgeInsets.only(
+          top: 50.0, left: 30.0, right: 30.0, bottom: 0.0),
+      margin: const EdgeInsets.only(bottom: 0.0),
       color: backgroundColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
