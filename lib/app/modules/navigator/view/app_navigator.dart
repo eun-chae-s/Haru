@@ -33,7 +33,7 @@ class _AppNavigatorState extends State<AppNavigator> {
         items: [
           BottomNavigationBarItem(
             icon: Container(
-              padding: const EdgeInsets.symmetric(vertical: 25),
+              padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 10),
               child: const Icon(CupertinoIcons.home),
             ),
             tooltip: 'Home',

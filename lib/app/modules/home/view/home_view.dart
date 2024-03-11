@@ -51,7 +51,7 @@ class Header extends StatelessWidget {
     return Container(
       height: 300,
       width: double.infinity,
-      padding: const EdgeInsets.only(top: 50.0, left: 20.0, right: 20.0),
+      padding: const EdgeInsets.only(top: 50.0, left: 30.0, right: 30.0),
       color: backgroundColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -60,17 +60,20 @@ class Header extends StatelessWidget {
             currentDate,
             style: const TextStyle(
               fontSize: 20,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w500,
               color: CupertinoColors.white,
               fontFamily: 'AbhayaLibre',
             ),
             textAlign: TextAlign.end,
           ),
+          const SizedBox(
+            height: 100,
+          ),
           Text(
             greeting,
             style: const TextStyle(
-              fontSize: 50,
-              fontWeight: FontWeight.w700,
+              fontSize: 30,
+              fontWeight: FontWeight.w600,
               color: CupertinoColors.white,
               fontFamily: 'AbhayaLibre',
             ),

@@ -1,16 +1,13 @@
-# haru
+# Haru
 
-A new Flutter project.
+_keep your day productive._
 
-## Getting Started
+<p float="left">
+    <img src="./img/home.png" width="100"/>
+    <img src="./img/main.png" width="100"/>
+</p>
 
-This project is a starting point for a Flutter application.
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FIO8ctdVbw2RpIOy8ID9VOw%2FDaily-Record-App%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3DgIZ2rC34ZCqQ13ob-1" allowfullscreen></iframe>
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+A mobile application where you keeps track of your study/work progress
