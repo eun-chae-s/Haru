@@ -102,5 +102,5 @@ flutter:
           weight: 600
     - family: DidactGothic
       fonts:
-        - asset: "assets/fonts/DidactGothic/DidactGothic-Regular.ttf"
+        - asset: "assets/fonts/DidactGothic-Regular.ttf"
           weight: 400

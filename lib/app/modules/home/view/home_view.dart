@@ -14,51 +14,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Subject> subjects = [
-    Subject(
-      name: 'Math',
-      tasks: [
-        Task(name: 'Algebra', isCompleted: true),
-        Task(name: 'Geometry'),
-        Task(name: 'Calculus'),
-      ],
-    ),
-    Subject(
-      name: 'Science',
-      tasks: [
-        Task(name: 'Physics'),
-        Task(name: 'Chemistry'),
-        Task(name: 'Biology', isCompleted: true),
-      ],
-    ),
-    Subject(
-      name: 'History',
-      tasks: [
-        Task(name: 'World History'),
-        Task(name: 'American History'),
-        Task(name: 'European History'),
-      ],
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       backgroundColor: lightBackgroundColor,
-      child: SingleChildScrollView(
-          child: Column(
+      child: Column(
         children: <Widget>[
           const Header(),
-          ListView.builder(
-            padding: const EdgeInsets.all(16.0),
-            itemCount: subjects.length,
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              return SubjectBox(subject: subjects[index]);
-            },
-          )
+          Expanded(child: TodoList()),
         ],
-      )),
+      ),
     );
   }
 }
@@ -129,5 +94,45 @@ class Header extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class TodoList extends StatelessWidget {
+  TodoList({super.key});
+
+  final List<Subject> subjects = [
+    Subject(
+      name: 'Math',
+      tasks: [
+        Task(name: 'Algebra', isCompleted: true),
+        Task(name: 'Geometry'),
+        Task(name: 'Calculus'),
+      ],
+    ),
+    Subject(
+      name: 'Science',
+      tasks: [
+        Task(name: 'Physics'),
+        Task(name: 'Chemistry'),
+        Task(name: 'Biology', isCompleted: true),
+      ],
+    ),
+    Subject(
+      name: 'History',
+      tasks: [
+        Task(name: 'World History'),
+        Task(name: 'American History'),
+        Task(name: 'European History'),
+      ],
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+        child: Column(
+      children:
+          subjects.map((subject) => SubjectBox(subject: subject)).toList(),
+    ));
   }
 }
