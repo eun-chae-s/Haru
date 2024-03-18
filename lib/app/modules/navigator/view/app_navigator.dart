@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:haru/app/modules/home/view/home_view.dart';
+import 'package:haru/app/modules/create/view/create_view.dart';
 import 'package:haru/app/core/constant/constants.dart';
 
 class AppNavigator extends StatefulWidget {
@@ -18,9 +19,9 @@ class _AppNavigatorState extends State<AppNavigator> {
   Widget build(BuildContext context) {
     const List<Widget> pages = <Widget>[
       HomePage(),
-      // SearchPage(),
-      // BookmarksPage(),
-      // ProfilePage(),
+      CreatePage(),
+      // TimerPage(),
+      // ProgressPage(),
       // SettingsPage(),
     ];
 
@@ -43,21 +44,21 @@ class _AppNavigatorState extends State<AppNavigator> {
               padding: const EdgeInsets.symmetric(vertical: 25),
               child: const Icon(CupertinoIcons.pencil_outline),
             ),
-            tooltip: 'Progress',
+            tooltip: 'Create',
           ),
           BottomNavigationBarItem(
             icon: Container(
               padding: const EdgeInsets.symmetric(vertical: 25),
               child: const Icon(CupertinoIcons.timer),
             ),
-            tooltip: 'Create',
+            tooltip: 'Timer',
           ),
           BottomNavigationBarItem(
             icon: Container(
               padding: const EdgeInsets.symmetric(vertical: 25),
               child: const Icon(CupertinoIcons.bookmark),
             ),
-            tooltip: 'Timer',
+            tooltip: 'Progress',
           ),
           BottomNavigationBarItem(
             icon: Container(

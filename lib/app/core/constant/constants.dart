@@ -10,6 +10,14 @@ const String userID = 'UserID';
 const String password = 'Password';
 const String question = 'Are you a new member?';
 const String signIn = 'Sign In';
+const String createPageHeader = 'New Goal';
+const String save = 'Save';
+const String cancel = 'Cancel';
+const String subject = 'subject';
+const String deadline = 'deadline';
+const String todo = 'to do';
+const String goalQuestion = 'What do you want to achieve?';
+
 
 // Color
 const Color backgroundColor = Color(0xFF7B91BC);

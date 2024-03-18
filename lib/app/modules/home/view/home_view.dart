@@ -98,37 +98,37 @@ class Header extends StatelessWidget {
 }
 
 class TodoList extends StatelessWidget {
-  TodoList({super.key});
-
-  final List<Subject> subjects = [
-    Subject(
-      name: 'Math',
-      tasks: [
-        Task(name: 'Algebra', isCompleted: true),
-        Task(name: 'Geometry'),
-        Task(name: 'Calculus'),
-      ],
-    ),
-    Subject(
-      name: 'Science',
-      tasks: [
-        Task(name: 'Physics'),
-        Task(name: 'Chemistry'),
-        Task(name: 'Biology', isCompleted: true),
-      ],
-    ),
-    Subject(
-      name: 'History',
-      tasks: [
-        Task(name: 'World History'),
-        Task(name: 'American History'),
-        Task(name: 'European History'),
-      ],
-    ),
-  ];
+  const TodoList({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final List<Subject> subjects = [
+      Subject(
+        name: 'Math',
+        tasks: [
+          Task(name: 'Algebra', isCompleted: true),
+          Task(name: 'Geometry'),
+          Task(name: 'Calculus'),
+        ],
+      ),
+      Subject(
+        name: 'Science',
+        tasks: [
+          Task(name: 'Physics'),
+          Task(name: 'Chemistry'),
+          Task(name: 'Biology', isCompleted: true),
+        ],
+      ),
+      Subject(
+        name: 'History',
+        tasks: [
+          Task(name: 'World History'),
+          Task(name: 'American History'),
+          Task(name: 'European History'),
+        ],
+      ),
+    ];
+
     return SingleChildScrollView(
         child: Column(
       children:
